@@ -29,4 +29,13 @@ the character d occurs 1 times
 '''
 
 def character_count(string):
-  pass
+  char_count_hash = {}
+  for char in string:
+    if char in char_count_hash:
+      char_count_hash[char] += 1
+    else:
+      char_count_hash[char] = 1
+  for char in char_count_hash:
+    print("the character {} occurs {} times".format(char, char_count_hash[char]))
+
+character_count("hi there")
