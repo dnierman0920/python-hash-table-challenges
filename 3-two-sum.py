@@ -26,21 +26,15 @@ Output: [0,1]
 '''    
 
 def two_sum(nums, target):
-  hash = {}
-  for i in range(len(nums)):
-    start = i + 1
-    hash[nums[i]] = nums[start:len(nums)]
-  #print("hash:\n", hash)
-  for num1 in hash:
-    for num2 in hash[num1]:
-      index1 = nums.index(num1)
-      index2 = nums.index(num2)
-      if num1 + num2 == target: return print("[{}, {}]".format(index1, index2))
-
+  for index in range(len(nums)):
+    difference = target - nums[index]
+    comparison_array = nums[index+1:]
+    if difference in comparison_array:
+      return print("[{}, {}]".format(index, comparison_array.index(difference) + index + 1))
 
 two_sum([2,7,11,15], 9)
-# two_sum([3,2,4], 6)
-# two_sum([3,3], 6)
+two_sum([3,2,4], 6)
+two_sum([3,3], 6)
 
 
 
