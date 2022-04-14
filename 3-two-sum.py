@@ -30,10 +30,12 @@ def two_sum(nums, target):
   for i in range(len(nums)):
     start = i + 1
     hash[nums[i]] = nums[start:len(nums)]
-  print("hash:\n", hash)
+  #print("hash:\n", hash)
   for num1 in hash:
     for num2 in hash[num1]:
-      if num1 + num2 == target: return print("[{}, {}]".format(num1, num2))
+      index1 = nums.index(num1)
+      index2 = nums.index(num2)
+      if num1 + num2 == target: return print("[{}, {}]".format(index1, index2))
 
 
 two_sum([2,7,11,15], 9)
