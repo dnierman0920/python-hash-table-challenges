@@ -24,4 +24,16 @@ Output: 10
 '''    
 
 def find_it(li):
-  pass
+  num_count_hash = {}
+  for num in li:
+    if num in num_count_hash:
+      num_count_hash[num] += 1
+    else:
+      num_count_hash[num] = 1
+  for num in num_count_hash:
+    if num_count_hash[num] % 2 == 1: return print(num)
+
+find_it([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5])
+find_it([1,1,2,-2,5,2,4,4,-1,-2,5])
+find_it([10])
+
